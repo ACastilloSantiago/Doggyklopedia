@@ -1,0 +1,81 @@
+.landing {
+  /* background-image: url("https://sgp1.digitaloceanspaces.com/spaces-asianatimes/2023/09/Dogs-True-Nature-Their-Emotions-and-Our-Responsibility.jpg"); */
+
+  background-color: #364652;
+
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  color: black;
+}
+.land > h1 {
+  background-color: rgba(122, 121, 121, 0.726);
+  padding: 1vw;
+  border-radius: 2vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 6vw;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  /* font-family: Arial, sans-serif; */
+  /* text-shadow: 0px 5px 10px rgb(233, 17, 136); */
+}
+.land {
+  background-image: url("../../../fondo.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-radius: 2rem;
+  width: 95vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.link {
+  background-color: red;
+  width: 20vw;
+  height: 10vh;
+}
+.logoHome {
+  /* background-color: rgb(228, 183, 183);
+  border-radius: 50%; */
+  /* position: relative;
+  
+  display: flex;
+  bottom: rem; */
+  margin-left: 25vw;
+  width: 12vw;
+  /* height: 12vw; */
+  /* height: 12vw;
+  border-radius: 50%; */
+  transition: 0.5s;
+  overflow: hidden;
+  /* box-shadow: 1px 1px 1px black; */
+  /* position: fixed; */
+}
+.logoHome:hover {
+  width: 13vw;
+  /* transform: matrix3d(); */
+}
+
+.dog {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 100vw;
+}
+.imgd {
+  width: 40vw;
+  margin-left: 10vw;
+}

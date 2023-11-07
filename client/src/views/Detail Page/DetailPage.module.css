@@ -1,0 +1,13 @@
+.detail {
+  background-image: url("https://img.freepik.com/vector-gratis/marco-vector-perros-sobre-fondo-blanco_53876-127700.jpg?w=2000");
+  background-position: center;
+  width: 100vw;
+  height: 92vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}

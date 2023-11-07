@@ -1,0 +1,27 @@
+.mainContenedor {
+  display: inline-block;
+}
+.mainContenedor > input {
+  width: 15vw;
+  border: 0.1vw solid #b5bec6;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px #606970;
+}
+
+.slide_diagonal {
+  color: #2c2c2c;
+  border: 0.12vw solid transparent;
+  background-color: #ffffff;
+  border-radius: 2vw;
+  margin-left: 0.2vw;
+  display: inline-block;
+  font-family: cursive;
+  font-size: 0.8vw;
+  cursor: pointer;
+  transition: 0.7s;
+}
+
+.slide_diagonal:hover {
+  font-size: 1vw;
+  box-shadow: inset 400px 50px 0 0 #c4e1f1;
+}

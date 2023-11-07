@@ -1,0 +1,16 @@
+.form {
+  background-image: url("https://fondosmil.com/fondo/106916.jpg");
+  background-position: center;
+  width: 100vw;
+  height: 92vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  /* margin: 2vh; */
+}

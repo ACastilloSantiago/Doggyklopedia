@@ -1,0 +1,40 @@
+.mainContenedor {
+  border: 1px solid transparent;
+  border-radius: 1rem;
+
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.836);
+  /* margin-top: 10rem; */
+  width: 70vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.detail > h2 {
+  margin: 1vh;
+  font-size: 2vh;
+}
+.detail > h1 {
+  margin-top: 5vh;
+
+  color: rgb(185, 132, 16);
+}
+.detail {
+  margin-top: 5vh;
+  font-family: cursive;
+  background-color: #fdfdfd00;
+
+  /* width: 100vw; */
+  height: 50vh;
+}
+.image {
+  /* border-radius: 10px; */
+  /* border: 2px solid green; */
+  /* margin-top: 1rem; */
+  width: 70%;
+  /* overflow: hidden; */
+  height: 100%;
+}
