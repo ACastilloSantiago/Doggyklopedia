@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { order, filter, reset, tempFilter } from "../../redux/actions";
 import { useEffect, useState } from "react";
 import Loading from "../Loading/Loading";
+import Modal from "../Modal/Modal";
 const CardContainer = () => {
   const dispatch = useDispatch();
   //!ESTADOS
@@ -92,7 +93,8 @@ const CardContainer = () => {
   // if (!dogs.length) {
   //   setDatabase(true);
   // }
-
+  const [modalType, setModalType] = useState("");
+  const [openModal, setOpenModal] = useState(false);
   if (!dogsPaginado.length) {
     // console.log("database if", database);
     if (notFoundDataBase) {
@@ -107,7 +109,6 @@ const CardContainer = () => {
             Back
           </button>
           <br />
-          {/* {alert("No hay perros!")} */}
         </div>
       );
     } else {
@@ -123,6 +124,36 @@ const CardContainer = () => {
   } else {
     return (
       <main className={style.container}>
+        <section className={style.buttons}>
+          <button
+            onClick={() => {
+              setOpenModal(true);
+
+              setModalType("order");
+            }}
+            className={style.button}
+          >
+            Ordenamientos
+          </button>
+          <button
+            onClick={() => {
+              setOpenModal(true);
+
+              setModalType("filter");
+            }}
+            className={style.button}
+          >
+            Filtrados
+          </button>
+        </section>
+        <Modal
+          openModal={openModal}
+          closeModal={() => {
+            setOpenModal(false);
+          }}
+          type={modalType}
+        />
+
         <section className={style.cards}>
           {dogsPaginado.map((dog) => {
             return (

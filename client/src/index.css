@@ -7,6 +7,10 @@
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
+body {
+  width: 100vw;
+  height: 100vh;
+}
 :root {
   --primary_color: #d7e7c4;
   --secondary_color: #89b282;
