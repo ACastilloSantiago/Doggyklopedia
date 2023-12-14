@@ -122,11 +122,11 @@ const CardContainer = () => {
     }
   } else {
     return (
-      <div className={style.mainContainer}>
-        <div className={style.Cards}>
+      <main className={style.container}>
+        <section className={style.cards}>
           {dogsPaginado.map((dog) => {
             return (
-              <div key={dog.id}>
+              <>
                 <Card
                   name={dog.name}
                   life_span={dog.life_span}
@@ -135,11 +135,11 @@ const CardContainer = () => {
                   id={dog.id}
                   image={dog.image}
                 />
-              </div>
+              </>
             );
           })}
-        </div>
-      </div>
+        </section>
+      </main>
     );
   }
 };
