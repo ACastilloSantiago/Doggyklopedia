@@ -1,5 +1,4 @@
 import "./App.css";
-import style from "./App.module.css";
 import LandingPage from "./views/Landing Page/LandingPage";
 import DetailPage from "./views/Detail Page/DetailPage";
 import HomePage from "./views/Home Page/HomePage";
@@ -11,7 +10,9 @@ import { getDogs, getTemperaments } from "./redux/actions";
 import { useEffect } from "react";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://apidoggyklopedia.onrender.com/";
+// axios.defaults.baseURL = "https://apidoggyklopedia.onrender.com/";
+axios.defaults.baseURL = "http://localhost:3001/";
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,7 +21,7 @@ function App() {
   }, [dispatch]); // se pone el dispatch en el array de depencia porque puede pasar que cargue de mala manera
   const location = useLocation().pathname;
   return (
-    <div className={style.je}>
+    <div>
       {location !== "/" && <NavBar />}
       {/* <h1>Henry Dogs</h1> */}
       <Routes>

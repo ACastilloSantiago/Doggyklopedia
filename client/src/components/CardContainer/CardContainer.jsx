@@ -114,7 +114,7 @@ const CardContainer = () => {
       return (
         <div>
           {/* <button onClick={handlerReset} className={style.slide_diagonal}>
-            Reset
+            ResetT
           </button> */}
           <Loading />
         </div>
@@ -123,102 +123,8 @@ const CardContainer = () => {
   } else {
     return (
       <div className={style.mainContainer}>
-        <div className={style.filtro}>
-          <div>
-            {/* <h5>Origen</h5> */}
-            <label>Ordenamiento/Filtrado </label>
-            {/* <select name="Filtrado" onChange={handlerFilter}>
-            <option value="" className={style} 
-              Origen
-            </option>
-            </select> */}
-
-            <button
-              onClick={handlerOrder}
-              value="RazaA"
-              className={style.slide_diagonal}
-            >
-              Raza Asc.
-            </button>
-            <button
-              onClick={handlerOrder}
-              value="RazaB"
-              className={style.slide_diagonal}
-            >
-              Raza Des.
-            </button>
-            <button
-              onClick={handlerOrder}
-              value="PesoB"
-              className={style.slide_diagonal}
-            >
-              Peso Des.
-            </button>
-            <button
-              onClick={handlerOrder}
-              value="PesoA"
-              className={style.slide_diagonal}
-            >
-              Peso Asc.
-            </button>
-            <button
-              onClick={handlerFilter}
-              value="Api"
-              className={style.slide_diagonal}
-            >
-              Api
-            </button>
-            {/* <br /> */}
-            <button
-              onClick={handlerFilter}
-              value="DataBase"
-              className={style.slide_diagonal}
-            >
-              Base de datos
-            </button>
-
-            <select
-              className={style.slide_diagonal}
-              name="Filtrado De Temperamentos"
-              onChange={handlerTempFilter}
-              // multiple
-            >
-              <option selected={cleanFilterTemps}>
-                Filtrado de Temperamentos
-              </option>
-              {/* <optgroup label="Temperamentos"> */}
-              {temps.map((temp, index) => {
-                // console.log(temp);
-                return (
-                  <option value={temp.name} key={index}>
-                    {temp.name}
-                  </option>
-                );
-              })}
-              {/* </optgroup> */}
-            </select>
-            <div className={style.tempContainer}>
-              {temperamentsSelecteds &&
-                temperamentsSelecteds.map((temp, index) => {
-                  // console.log("prueba", temp);
-                  return (
-                    <div key={index} className={style.tempSelected}>
-                      <span>{temp}</span>
-                      <button type="button" id={temp} onClick={handlerDelete}>
-                        x
-                      </button>
-                    </div>
-                  );
-                })}
-            </div>
-            <button onClick={handlerReset} className={style.slide_diagonal}>
-              Reset
-            </button>
-          </div>
-        </div>
         <div className={style.Cards}>
           {dogsPaginado.map((dog) => {
-            // console.log("holas", dog);
             return (
               <div key={dog.id}>
                 <Card
@@ -232,15 +138,6 @@ const CardContainer = () => {
               </div>
             );
           })}
-        </div>
-        <div className={style.paginado}>
-          <button onClick={prevHandler} className={style.slide_diagonal}>
-            Prev
-          </button>
-          <p>{currentPage}</p>
-          <button onClick={nextHandler} className={style.slide_diagonal}>
-            Next
-          </button>
         </div>
       </div>
     );
