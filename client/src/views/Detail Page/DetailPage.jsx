@@ -20,7 +20,7 @@ const DetailPage = () => {
     <div className={style.detailPage}>
       <img
         className={style.detailPage__vector}
-        src="../../../images/vector-detail.svg"
+        src="../../../vector-detail.svg"
         alt="vector-background"
       />
       <Detail detail={dogById} />
