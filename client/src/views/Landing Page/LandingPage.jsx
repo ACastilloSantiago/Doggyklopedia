@@ -2,22 +2,31 @@ import style from "./LandingPage.module.css";
 import { Link } from "react-router-dom";
 const LandingPage = () => {
   return (
-    <div className={style.landing}>
-      {/* <h1>Bienvenidos al WebSite de Dogs!</h1> */}
-      <div className={style.land}>
-        <h1>WELCOME TO DOGS PAGE!</h1>
-        <div className={style.dog}>
-          <img className={style.imgd} src="../../../dog1.png" alt="" />
+    <main className={style.landing}>
+      <img
+        src="../../../public/Vector-1ss.svg"
+        alt=""
+        className={style.vector}
+      />
 
-          <Link to={"/home"}>
-            <img className={style.logoHome} src="../../../home.png" alt="" />
-          </Link>
-        </div>
+      <div className={style.text}>
+        <h1 className={style.text__title}>DOGGYKLOPEDIA</h1>
+        <p className={style.text__paragraph}>
+          Aplicación web enfocada en proveer información detallada sobre las
+          distintas razas de perros en el mundo!
+        </p>
       </div>
-    </div>
+
+      <img
+        className={style.landing__img}
+        src="../../../dog1.png"
+        alt="perro-fondo"
+      />
+
+      <Link to={"/home"} className={style.landing__button}>
+        Comencemos!
+      </Link>
+    </main>
   );
 };
 export default LandingPage;
-{
-  // ../../../stock-vector-dog-house-icon.png
-}

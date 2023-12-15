@@ -21,7 +21,7 @@ function App() {
   }, [dispatch]); // se pone el dispatch en el array de depencia porque puede pasar que cargue de mala manera
   const location = useLocation().pathname;
   return (
-    <div>
+    <section>
       {/*! Navbar */}
       {/* {location !== "/" && <NavBar />} */}
       {/* <h1>Henry Dogs</h1> */}
@@ -31,7 +31,7 @@ function App() {
         <Route path="/creator" element={<FormPage />} />
         <Route path="/detail/:id" element={<DetailPage />} />
       </Routes>
-    </div>
+    </section>
   );
 }
 

@@ -21,9 +21,9 @@
   padding: 8px 0;
   border: none;
   border-radius: 8px;
-  background: var(--tertiary_color);
+  background: var(--secondary_color);
   font-size: 1.2em;
-  color: #fff;
+  color: #000;
   text-align: center;
 }
 /* .modal__button:hover {

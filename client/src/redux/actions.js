@@ -11,7 +11,6 @@ import {
   ERROR,
 } from "./actions-types";
 import axios from "axios";
-// const
 //
 export const reset = () => {
   return {
@@ -38,6 +37,12 @@ export const order = (value) => {
   };
 };
 
+export const tempSeleccionados = (value) => {
+  return {
+    type: "TEMPSELECTED",
+    payload: value,
+  };
+};
 //
 export const getDogById = (id) => {
   return async (dispatch) => {

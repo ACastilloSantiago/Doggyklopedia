@@ -1,6 +1,12 @@
 import style from "./Modal.module.css";
 
-import { order, filter, reset, tempFilter } from "../../redux/actions";
+import {
+  order,
+  filter,
+  reset,
+  tempFilter,
+  tempSeleccionados,
+} from "../../redux/actions";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -13,6 +19,10 @@ const Modal = ({ type, openModal, closeModal }) => {
   const temps = useSelector((state) => state.temps);
   const [cleanFilterTemps, setCleanFilterTemps] = useState(false);
   const [temperamentsSelecteds, setTemperamentsSelectedsFilter] = useState([]);
+  console.log(temperamentsSelecteds);
+  const temperamentosSeleccionados = useSelector(
+    (state) => state.temperamentosSeleccionados
+  );
   //! HANDLERS
   const handlerOrder = (event) => {
     dispatch(order(event.target.value));
@@ -33,6 +43,7 @@ const Modal = ({ type, openModal, closeModal }) => {
         ...new Set([...temperamentsSelecteds, ` ${event.target.value}`]),
       ]);
       dispatch(tempFilter(event.target.value));
+      dispatch(tempSeleccionados(event.target.value));
       //?   setCurrentPage(0);
       setCleanFilterTemps(false);
       //?   setNotFoundDataBase(true);

@@ -14,6 +14,8 @@ const CardContainer = () => {
   const [notFoundDataBase, setNotFoundDataBase] = useState(false);
   const [cleanFilterTemps, setCleanFilterTemps] = useState(false);
   const [temperamentsSelecteds, setTemperamentsSelectedsFilter] = useState([]);
+  console.log(temperamentsSelecteds, "card");
+
   // !PAGINADO
   const [currentPage, setCurrentPage] = useState(0);
   const DOGS_FOR_PAGE = 8;
@@ -148,7 +150,23 @@ const CardContainer = () => {
           <button onClick={handlerReset} className={style.button}>
             Reset
           </button>
+          {/* <div className={style.tempContainer}>
+            <h1>holas</h1>
+            {temperamentsSelecteds &&
+              temperamentsSelecteds.map((temp, index) => {
+                console.log(temp, "temperamentos");
+                return (
+                  <div key={index} className={style.tempSelected}>
+                    <span>{temp}</span>
+                    <button type="button" id={temp} onClick={handlerDelete}>
+                      x
+                    </button>
+                  </div>
+                );
+              })}
+          </div> */}
         </section>
+
         <Modal
           openModal={openModal}
           closeModal={() => {
