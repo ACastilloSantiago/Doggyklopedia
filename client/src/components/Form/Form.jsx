@@ -399,132 +399,151 @@ const Form = () => {
     dispatch(cleanError());
   }
   return (
-    <div className={style.mainContenedor}>
-      <h1>Añadí una raza!</h1>
+    <article className={style.main}>
+      {/* <h1 className={style.main__title}>Añadí una raza!</h1> */}
 
       <form onSubmit={handlerSubmit} className={style.form}>
-        <div className={style.divForm}>
-          <label htmlFor="">Nombre</label>
-          <input
-            autoComplete="off"
-            type="text"
-            placeholder="Nombre"
-            name="name"
-            value={dog.name}
-            onChange={handlerDog}
-          />
+        <label className={style.form__label}>Nombre</label>
+        <input
+          autoComplete="off"
+          type="text"
+          placeholder="Nombre"
+          name="name"
+          value={dog.name}
+          onChange={handlerDog}
+          className={style.form__input}
+        />
 
-          {error.name && <span>{error.name}</span>}
+        {error.name && <span className={style.form__span}>{error.name}</span>}
 
-          <label htmlFor="">Años de vida</label>
-          <input
-            autoComplete="off"
-            type="text"
-            placeholder="05 - 10"
-            name="life_span"
-            value={dog.life_span}
-            onChange={handlerDog}
-          />
+        <label className={style.form__label}>Años de vida</label>
+        <input
+          autoComplete="off"
+          type="text"
+          placeholder="05 - 10"
+          name="life_span"
+          value={dog.life_span}
+          onChange={handlerDog}
+          className={style.form__input}
+        />
 
-          {error.life_span && <span>{error.life_span}</span>}
+        {error.life_span && (
+          <span className={style.form__span}>{error.life_span}</span>
+        )}
 
-          <label htmlFor="">Altura Max</label>
-          <input
-            autoComplete="off"
-            type="text"
-            placeholder="30"
-            name="height_max"
-            onChange={handlerPreDog}
-            value={preDog.height_max}
-          />
+        <label className={style.form__label}>Altura Max</label>
+        <input
+          autoComplete="off"
+          type="text"
+          placeholder="30"
+          name="height_max"
+          onChange={handlerPreDog}
+          value={preDog.height_max}
+          className={style.form__input}
+        />
 
-          {error.height_max && <span>{error.height_max}</span>}
+        {error.height_max && (
+          <span className={style.form__span}>{error.height_max}</span>
+        )}
 
-          <label htmlFor="">Altura Min</label>
-          <input
-            autoComplete="off"
-            type="text"
-            placeholder="10"
-            name="height_min"
-            onChange={handlerPreDog}
-            value={preDog.height_min}
-          />
+        <label className={style.form__label}>Altura Min</label>
+        <input
+          autoComplete="off"
+          type="text"
+          placeholder="10"
+          name="height_min"
+          onChange={handlerPreDog}
+          value={preDog.height_min}
+          className={style.form__input}
+        />
 
-          {error.height_min && <span>{error.height_min}</span>}
+        {error.height_min && (
+          <span className={style.form__span}>{error.height_min}</span>
+        )}
 
-          <label htmlFor="">Peso Max</label>
-          <input
-            autoComplete="off"
-            type="text"
-            placeholder="6"
-            name="weight_max"
-            value={preDog.weight_max}
-            onChange={handlerPreDog}
-          />
+        <label className={style.form__label}>Peso Max</label>
+        <input
+          autoComplete="off"
+          type="text"
+          placeholder="6"
+          name="weight_max"
+          value={preDog.weight_max}
+          onChange={handlerPreDog}
+          className={style.form__input}
+        />
 
-          {error.weight_max && <span>{error.weight_max}</span>}
+        {error.weight_max && (
+          <span className={style.form__span}>{error.weight_max}</span>
+        )}
 
-          <label htmlFor="">Peso Min</label>
-          <input
-            autoComplete="off"
-            type="text"
-            placeholder="2"
-            name="weight_min"
-            value={preDog.weight_min}
-            onChange={handlerPreDog}
-          />
+        <label className={style.form__label}>Peso Min</label>
+        <input
+          autoComplete="off"
+          type="text"
+          placeholder="2"
+          name="weight_min"
+          value={preDog.weight_min}
+          onChange={handlerPreDog}
+          className={style.form__input}
+        />
 
-          {error.weight_min && <span>{error.weight_min}</span>}
+        {error.weight_min && (
+          <span className={style.form__span}>{error.weight_min}</span>
+        )}
 
-          <label htmlFor="">URL de la Imagen</label>
-          <input
-            autoComplete="off"
-            type="text"
-            placeholder="img.com"
-            name="image"
-            value={dog.image}
-            onChange={handlerDog}
-          />
+        <label className={style.form__label}>URL de la Imagen</label>
+        <input
+          autoComplete="off"
+          type="text"
+          placeholder="img.com"
+          name="image"
+          value={dog.image}
+          onChange={handlerDog}
+          className={style.form__input}
+        />
 
-          {error.image && <span>{error.image}</span>}
+        {error.image && <span className={style.form__span}>{error.image}</span>}
 
-          <label htmlFor="">Seleccione temperamentos</label>
+        <label className={style.form__label}>Seleccione temperamentos</label>
 
-          <select onChange={handlerTemps}>
-            <option value="" selected disabled>
-              Temperamentos
-            </option>
-            {temps.map((temp) => {
-              return (
-                <option value={temp.name} key={temp.id}>
-                  {temp.name}
-                </option>
-              );
-            })}
-          </select>
+        <select onChange={handlerTemps} className={style.form__select}>
+          <option selected disabled>
+            Temperamentos
+          </option>
+          {temps.map((temp) => {
+            return (
+              <option value={temp.name} key={temp.id}>
+                {temp.name}
+              </option>
+            );
+          })}
+        </select>
 
-          <div className={style.tempsContainer}>
-            {selectedTemps &&
-              selectedTemps.map((temp, index) => (
-                // {temp&& }
-                <div key={index} className={style.temp}>
-                  {/* <span className={style.sp}>{temp}</span> */}
-                  <button type="button" id={temp} onClick={handlerDelete}>
-                    {temp}
-                  </button>
-                </div>
-              ))}
-          </div>
-          {error.temps && <span>{error.temps}</span>}
-
-          <div className={style.submit}>
-            <button disabled={disbleSend()} type="submit">
-              Crear
-            </button>
-          </div>
+        <div className={style.form__tempsContainer}>
+          {selectedTemps &&
+            selectedTemps.map((temp, index) => (
+              <button
+                type="button"
+                id={temp}
+                onClick={handlerDelete}
+                key={index}
+                className={style.form__temp}
+              >
+                {temp}
+              </button>
+            ))}
         </div>
+        {error.temps && <span className={style.form__span}>{error.temps}</span>}
+
+        <button
+          disabled={disbleSend()}
+          type="submit"
+          className={style.form__submit}
+        >
+          Crear
+        </button>
       </form>
-    </div>
+    </article>
   );
 };
 export default Form;

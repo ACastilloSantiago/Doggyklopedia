@@ -6,17 +6,32 @@ const Detail = ({ detail }) => {
     return <Loading />;
   } else {
     return (
-      <div className={style.mainContenedor} key={detail.id}>
-        <img src={detail?.image} alt={detail?.name} className={style.image} />
-        <div className={style.detail}>
-          <h1>{detail?.name}</h1>
-          <h2>ID= {detail?.id}</h2>
-          <h2>Altura= {detail?.height} cm.</h2>
-          <h2>Peso= {detail?.weight} kg.</h2>
-          <h2>Años de vida= {detail?.life_span}.</h2>
-          <h2>Temperamentos= {detail?.temperaments}.</h2>
+      <article className={style.detail} key={detail.id}>
+        <img
+          src={detail?.image}
+          alt={detail?.name}
+          className={style.detail__image}
+        />
+        <div className={style.texts}>
+          <h1 className={style.texts__title}>{detail?.name}</h1>
+          <div>
+            <span className={style.texts__titlespan}>ID:</span>
+            <span className={style.texts__span}>{detail?.id}.</span>
+          </div>
+          <span className={style.texts__titlespan}>Altura:</span>
+          <span className={style.texts__span}>{detail?.height} cm.</span>
+          <div>
+            <span className={style.texts__titlespan}>Peso:</span>
+            <span className={style.texts__span}>{detail?.weight} kg.</span>
+          </div>
+          <span className={style.texts__titlespan}>Años de vida:</span>
+          <span className={style.texts__span}>{detail?.life_span}.</span>
+          <div>
+            <span className={style.texts__titlespan}>Temperamentos:</span>
+            <span className={style.texts__span}>{detail?.temperaments}.</span>
+          </div>
         </div>
-      </div>
+      </article>
     );
   }
 };

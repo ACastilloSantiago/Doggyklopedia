@@ -15,9 +15,14 @@ const DetailPage = () => {
     };
   }, []);
   const dogById = useSelector((state) => state.dogId);
-  console.log("Detail Page", dogById);
+  // console.log("Detail Page", dogById);
   return (
-    <div className={style.detail}>
+    <div className={style.detailPage}>
+      <img
+        className={style.detailPage__vector}
+        src="../../../images/vector-detail.svg"
+        alt="vector-background"
+      />
       <Detail detail={dogById} />
     </div>
   );

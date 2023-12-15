@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 const LandingPage = () => {
   return (
     <main className={style.landing}>
-      <img src="../../../Vector-1ss.svg" alt="" className={style.vector} />
+      <img
+        src="../../../images/vector-landing.svg"
+        alt=""
+        className={style.vector}
+      />
 
       <div className={style.text}>
         <h1 className={style.text__title}>DOGGYKLOPEDIA</h1>
@@ -15,7 +19,7 @@ const LandingPage = () => {
 
       <img
         className={style.landing__img}
-        src="../../../dog1.png"
+        src="../../../images/dog-landing.png"
         alt="perro-fondo"
       />
       <Link to={"/home"} className={style.landing__button}>

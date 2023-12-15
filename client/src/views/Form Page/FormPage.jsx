@@ -12,6 +12,16 @@ const FormPage = () => {
 
   return (
     <div className={style.form}>
+      <img
+        src="../../../images/vector-form-up.svg"
+        alt="vector-background-up"
+        className={style.form__vector_up}
+      />
+      <img
+        src="../../../images/vector-form-down.svg"
+        alt="vector-background-down"
+        className={style.form__vector_down}
+      />
       <Form />
     </div>
   );

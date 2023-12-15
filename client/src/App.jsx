@@ -21,7 +21,7 @@ function App() {
   }, [dispatch]); // se pone el dispatch en el array de depencia porque puede pasar que cargue de mala manera
   const location = useLocation().pathname;
   return (
-    <section>
+    <section id="App">
       {/*! Navbar */}
       {/* {location !== "/" && <NavBar />} */}
       {/* <h1>Henry Dogs</h1> */}
