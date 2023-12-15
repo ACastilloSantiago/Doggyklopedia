@@ -60,60 +60,51 @@ const Modal = ({ type, openModal, closeModal }) => {
 
   if (type === "order") {
     return (
-      <article>
+      <article className={style.modal}>
+        <h2 className={style.modal__title}>Ordenamientos</h2>
+
         <button
           onClick={handlerOrder}
           value="RazaA"
-          className={style.slide_diagonal}
+          className={style.modal__button}
         >
-          Raza Asc.
+          Raza A/Z.
         </button>
         <button
           onClick={handlerOrder}
           value="RazaB"
-          className={style.slide_diagonal}
+          className={style.modal__button}
         >
-          Raza Des.
-        </button>
-        <button
-          onClick={handlerOrder}
-          value="PesoB"
-          className={style.slide_diagonal}
-        >
-          Peso Des.
+          Raza Z/A.
         </button>
         <button
           onClick={handlerOrder}
           value="PesoA"
-          className={style.slide_diagonal}
+          className={style.modal__button}
         >
-          Peso Asc.
+          Peso -/+.
         </button>
-        <button onClick={closeModal} className={style.slide_diagonal}>
-          x
+        <button
+          onClick={handlerOrder}
+          value="PesoB"
+          className={style.modal__button}
+        >
+          Peso +/-.
         </button>
+        <div className={style.exit}>
+          <button onClick={closeModal} className={style.exit__button}>
+            Salir
+          </button>
+        </div>
       </article>
     );
   }
   if (type === "filter") {
     return (
-      <article>
-        <button
-          onClick={handlerFilter}
-          value="Api"
-          className={style.slide_diagonal}
-        >
-          Api
-        </button>
-        <button
-          onClick={handlerFilter}
-          value="DataBase"
-          className={style.slide_diagonal}
-        >
-          Base de datos
-        </button>
+      <article className={style.modal}>
+        <h2 className={style.modal__title}>Filtrados</h2>
         <select
-          className={style.slide_diagonal}
+          className={style.modal__button}
           name="Filtrado De Temperamentos"
           onChange={handlerTempFilter}
         >
@@ -139,15 +130,25 @@ const Modal = ({ type, openModal, closeModal }) => {
               );
             })}
         </div>
-        e//! Botton reset
-        <section className={style.filtro}>
-          <button onClick={closeModal} className={style.slide_diagonal}>
-            x
+        <button
+          onClick={handlerFilter}
+          value="DataBase"
+          className={style.modal__button}
+        >
+          Base de datos
+        </button>
+        <button
+          onClick={handlerFilter}
+          value="Api"
+          className={style.modal__button}
+        >
+          Api
+        </button>
+        <div className={style.exit}>
+          <button onClick={closeModal} className={style.exit__button}>
+            Salir
           </button>
-          {/* <button onClick={handlerReset} className={style.slide_diagonal}>
-            Reset
-          </button> */}
-        </section>
+        </div>
       </article>
     );
   }

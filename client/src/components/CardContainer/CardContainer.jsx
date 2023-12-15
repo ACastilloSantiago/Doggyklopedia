@@ -129,21 +129,24 @@ const CardContainer = () => {
             onClick={() => {
               setOpenModal(true);
 
+              setModalType("filter");
+            }}
+            className={style.button}
+          >
+            Filtrados
+          </button>
+          <button
+            onClick={() => {
+              setOpenModal(true);
+
               setModalType("order");
             }}
             className={style.button}
           >
             Ordenamientos
           </button>
-          <button
-            onClick={() => {
-              setOpenModal(true);
-
-              setModalType("filter");
-            }}
-            className={style.button}
-          >
-            Filtrados
+          <button onClick={handlerReset} className={style.button}>
+            Reset
           </button>
         </section>
         <Modal
