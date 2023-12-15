@@ -27,7 +27,7 @@
 /* } */
 .landing {
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,7 +73,6 @@
 .vector {
   position: fixed;
   inset: 0;
-  /* height: 50vh; */
   width: 100%;
   z-index: -1;
 }
