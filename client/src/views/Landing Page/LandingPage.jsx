@@ -18,7 +18,6 @@ const LandingPage = () => {
         src="../../../dog1.png"
         alt="perro-fondo"
       />
-
       <Link to={"/home"} className={style.landing__button}>
         Comencemos!
       </Link>

@@ -34,6 +34,7 @@
   align-items: center;
   padding: 8px;
   gap: 16px;
+  position: relative;
 }
 .text {
   display: flex;
@@ -59,16 +60,19 @@
 .landing__img {
   width: 225px;
 }
+
 .landing__button {
   text-decoration: none;
   text-align: center;
   color: #fff;
-  background: var(--tertiary_color);
-  padding: 8px;
   border-radius: 8px;
   font-size: 1.8em;
   width: 80%;
-  margin-top: 24px;
+  /* margin-top: 24px; */
+  background: var(--tertiary_color);
+  padding: 8px;
+  position: absolute;
+  bottom: 16px;
 }
 .vector {
   position: fixed;
