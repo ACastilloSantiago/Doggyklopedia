@@ -28,16 +28,15 @@ const SearchBar = () => {
     dispatch(cleanError());
   }
   return (
-    <div className={style.mainContenedor}>
-      {/* <h1>SearchBar</h1> */}
+    <article className={style.searhBar}>
       <input
         type="search"
         value={raza}
         onChange={handlerInput}
-        className={style.input}
+        className={style.searhBar__input}
       />
       <button
-        className={style.slide_diagonal}
+        className={style.slide__button}
         onClick={() => {
           Search(raza);
           setRaza("");
@@ -45,7 +44,7 @@ const SearchBar = () => {
       >
         Search
       </button>
-    </div>
+    </article>
   );
 };
 export default SearchBar;

@@ -23,7 +23,7 @@ function App() {
   return (
     <section id="App">
       {/*! Navbar */}
-      {/* {location !== "/" && <NavBar />} */}
+      {location !== "/" && <NavBar />}
       {/* <h1>Henry Dogs</h1> */}
       <Routes>
         <Route path="/" element={<LandingPage />} />

@@ -24,19 +24,13 @@ let initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     // Presentaciones
-    // case "TEMPSELECTED":
-    //   console.log(action.payload, "temperamentos seleccionados");
-    //   // return {
-    //   //   ...state,
-    //   //   temperamentosSeleccionados: [
-    //   //     ...state.temperamentosSeleccionados,
-    //   //     action.payload,
-    //   //   ],
-    //   // };
-    //   state.temperamentosSeleccionados.push(action.payload);
-    //   return {
-    //     state,
-    //   };
+    case "TEMPSELECTED":
+      console.log(action.payload, "temperamentos seleccionados");
+      return {
+        ...state,
+        temperamentosSeleccionados: [...action.payload],
+      };
+
     case ERROR:
       console.log(action.payload);
       return {

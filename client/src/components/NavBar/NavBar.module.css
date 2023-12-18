@@ -1,46 +1,45 @@
-.mainContainer {
+.nav {
+  background-color: var(--primary_color);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  /* border: 1px solid black; */
-
-  /* padding: 10px; */
-  /* border-radius: 10px; */
-  height: 8vh;
   width: 100%;
-  /* margin-top: ; */
-  /* margin-bottom: 10px; */
-  /* overflow-x: hidden; */
-  overflow-y: hidden;
-  background-color: #364652;
-
-  /* background-image: url("https://media.istockphoto.com/id/1410895344/es/vector/lindos-perros-mirando-dibujos-animados-ilustraci%C3%B3n-vectorial.jpg?s=612x612&w=0&k=20&c=KJZyzP0IfUBzRlrZ52wGX_NLiN4N2qY2NQwjnkVpJWk="); */
-  /* position: fixed; */
-  top: 0.22rem;
-  /* transition: 1s; */
+  overflow: hidden;
+  padding: 8px;
 }
 
-.link {
-  color: #000000;
-  text-decoration: none;
-  font-size: 1.5rem;
-  background-color: coral;
-  padding: 2px;
-  border: 1px solid black;
-  /* font-weight: 800px; */
-  transition: font-size 0.3s;
-}
-.link:hover {
-  font-size: 2rem;
-}
-.img {
-  width: 3vw;
+/* .nav__img {
   transition: 0.5s;
   overflow: hidden;
-}
-.img:hover {
-  width: 4vw;
-}
-/* .SearchBar {
-  background-color: blue;
 } */
+.nav__icon_landing {
+  width: 40px;
+}
+.nav__icon_home {
+  width: 24px;
+}
+.nav__icon_newdog {
+  width: 80px;
+}
+.nav__img:hover {
+  /* width: ; */
+}
+.nav__link {
+  text-decoration: none;
+  color: var(--tertiary_color);
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+/* .nav__link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: coral;
+    padding: 2px;
+    border: 1px solid black;
+    transition: font-size 0.3s;
+  }
+  .nav__link:hover {
+    font-size: 2rem;
+  } */

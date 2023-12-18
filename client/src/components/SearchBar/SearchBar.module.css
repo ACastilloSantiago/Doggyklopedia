@@ -1,24 +1,24 @@
-.mainContenedor {
-  display: inline-block;
+.searhBar {
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }
-.mainContenedor > input {
-  width: 15vw;
-  border: 0.1vw solid #b5bec6;
-  border-radius: 15px;
+.searhBar__input {
+  width: 120px;
+  border: none;
+  border-radius: 8px;
   box-shadow: 2px 2px 5px #606970;
 }
 
-.slide_diagonal {
-  color: #2c2c2c;
-  border: 0.12vw solid transparent;
-  background-color: #ffffff;
-  border-radius: 2vw;
-  margin-left: 0.2vw;
-  display: inline-block;
-  font-family: cursive;
-  font-size: 0.8vw;
+.slide__button {
+  color: #000;
+  border: none;
+  background-color: #fff;
+  border-radius: 8px;
   cursor: pointer;
   transition: 0.7s;
+  padding: 4px;
+  font-size: 1em;
 }
 
 .slide_diagonal:hover {

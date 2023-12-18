@@ -18,11 +18,10 @@ const Modal = ({ type, openModal, closeModal }) => {
   const dispatch = useDispatch();
   const temps = useSelector((state) => state.temps);
   const [cleanFilterTemps, setCleanFilterTemps] = useState(false);
-  const [temperamentsSelecteds, setTemperamentsSelectedsFilter] = useState([]);
-  console.log(temperamentsSelecteds);
   const temperamentosSeleccionados = useSelector(
     (state) => state.temperamentosSeleccionados
   );
+
   //! HANDLERS
   const handlerOrder = (event) => {
     dispatch(order(event.target.value));
@@ -39,34 +38,29 @@ const Modal = ({ type, openModal, closeModal }) => {
   };
   const handlerTempFilter = (event) => {
     if (event.target.value) {
-      setTemperamentsSelectedsFilter([
-        ...new Set([...temperamentsSelecteds, ` ${event.target.value}`]),
-      ]);
       dispatch(tempFilter(event.target.value));
-      dispatch(tempSeleccionados(event.target.value));
+      dispatch(
+        tempSeleccionados([
+          ...new Set([...temperamentosSeleccionados, ` ${event.target.value}`]),
+        ])
+      );
       //?   setCurrentPage(0);
       setCleanFilterTemps(false);
       //?   setNotFoundDataBase(true);
     }
   };
   const handlerDelete = (event) => {
-    setTemperamentsSelectedsFilter(
-      temperamentsSelecteds.filter((temp) => temp !== event.target.id)
-    );
     dispatch(
       tempFilter(
-        temperamentsSelecteds.filter((temp) => temp !== event.target.id)
+        temperamentosSeleccionados.filter((temp) => temp !== event.target.id)
+      )
+    );
+    dispatch(
+      tempSeleccionados(
+        temperamentosSeleccionados.filter((temp) => temp !== event.target.id)
       )
     );
     setCleanFilterTemps(true);
-  };
-  const handlerReset = () => {
-    //? setCurrentPage(0);
-    dispatch(reset());
-    setCleanFilterTemps(true);
-    dispatch(tempFilter(""));
-    setTemperamentsSelectedsFilter([]);
-    //? setNotFoundDataBase(false);
   };
 
   if (type === "order") {
@@ -104,7 +98,7 @@ const Modal = ({ type, openModal, closeModal }) => {
         </button>
         <div className={style.exit}>
           <button onClick={closeModal} className={style.exit__button}>
-            Salir
+            Aplicar ordenaminetos
           </button>
         </div>
       </article>
@@ -128,9 +122,10 @@ const Modal = ({ type, openModal, closeModal }) => {
             );
           })}
         </select>
+        {/* //!! Temperamentos seleccionados en filtros */}
         <div className={style.tempContainer}>
-          {temperamentsSelecteds &&
-            temperamentsSelecteds.map((temp, index) => {
+          {temperamentosSeleccionados &&
+            temperamentosSeleccionados.map((temp, index) => {
               return (
                 <div key={index} className={style.tempSelected}>
                   <span>{temp}</span>
@@ -157,7 +152,7 @@ const Modal = ({ type, openModal, closeModal }) => {
         </button>
         <div className={style.exit}>
           <button onClick={closeModal} className={style.exit__button}>
-            Salir
+            Aplicar filtros
           </button>
         </div>
       </article>

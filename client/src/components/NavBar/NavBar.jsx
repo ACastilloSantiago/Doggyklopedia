@@ -7,17 +7,17 @@ const NavBar = () => {
   const location = useLocation().pathname;
 
   return (
-    <div className={style.mainContainer}>
+    <nav className={style.nav}>
       <Link to={"/"}>
         <img
-          className={style.img}
-          src="https://static.vecteezy.com/system/resources/previews/024/952/943/original/cute-dog-logo-in-flat-style-png.png"
+          className={style.nav__icon_landing}
+          src="../../../icon-lightgreen-removebg-preview.png"
           alt=""
         />
       </Link>
       {!location.includes("/home") && (
-        <Link to="/home" className={style.img}>
-          <img className={style.img} src="../../../home.png" alt="" />
+        <Link to="/home" className={style.nav__link}>
+          Inicio
         </Link>
       )}
 
@@ -26,11 +26,17 @@ const NavBar = () => {
       )}
 
       {!location.includes("/creator") && (
-        <Link to="/creator">
-          <img className={style.img} src="../../../23.png" alt="" />
+        <Link to="/creator" className={style.nav__link}>
+          {/* <img
+
+            className={style.nav__icon_newdog}
+            src="../../../public/agregar-removebg-preview.png"
+            alt=""
+          /> */}
+          Agregar
         </Link>
       )}
-    </div>
+    </nav>
   );
 };
 

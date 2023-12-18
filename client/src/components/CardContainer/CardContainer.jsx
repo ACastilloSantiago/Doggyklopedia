@@ -2,19 +2,26 @@ import Card from "../Card/Card";
 import style from "./CardContainer.module.css";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { order, filter, reset, tempFilter } from "../../redux/actions";
+import {
+  order,
+  filter,
+  reset,
+  tempFilter,
+  tempSeleccionados,
+} from "../../redux/actions";
 import { useEffect, useState } from "react";
 import Loading from "../Loading/Loading";
 import Modal from "../Modal/Modal";
 const CardContainer = () => {
   const dispatch = useDispatch();
   //!ESTADOS
-  const temps = useSelector((state) => state.temps);
   const dogs = useSelector((state) => state.dogs_Show);
   const [notFoundDataBase, setNotFoundDataBase] = useState(false);
-  const [cleanFilterTemps, setCleanFilterTemps] = useState(false);
-  const [temperamentsSelecteds, setTemperamentsSelectedsFilter] = useState([]);
-  console.log(temperamentsSelecteds, "card");
+  const temperamentosSeleccionados = useSelector(
+    (state) => state.temperamentosSeleccionados
+  );
+  const [modalType, setModalType] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
   // !PAGINADO
   const [currentPage, setCurrentPage] = useState(0);
@@ -41,64 +48,34 @@ const CardContainer = () => {
   useEffect(() => {
     setDogsPaginado([...dogs].splice(0, DOGS_FOR_PAGE));
   }, [dogs]);
-  // console.log(dogs, dogsPaginado);
-  //! HANDLERS
-  const handlerOrder = (event) => {
-    dispatch(order(event.target.value));
-    setCurrentPage(0);
-    setCleanFilterTemps(false);
-  };
-  const handlerFilter = (event) => {
-    // console.log("sera?", event.target.value);
-    dispatch(filter(event.target.value));
-    setCurrentPage(0);
-    setCleanFilterTemps(false);
-    if (event.target.value === "DataBase") {
-      setNotFoundDataBase(true);
-    }
-  };
-  const handlerTempFilter = (event) => {
-    if (event.target.value) {
-      setTemperamentsSelectedsFilter([
-        ...new Set([...temperamentsSelecteds, ` ${event.target.value}`]),
-      ]);
 
-      // setFilterFilter([...Filter, `${event.target.value}, `].join(""));
-      // console.log("test", [...new Set([...Filter, ` ${event.target.value}`])]);
-      dispatch(tempFilter(event.target.value));
-      setCurrentPage(0);
-      setCleanFilterTemps(false);
-      setNotFoundDataBase(true);
-    }
-  };
+  //!! HANDLERS
   const handlerDelete = (event) => {
-    setTemperamentsSelectedsFilter(
-      temperamentsSelecteds.filter((temp) => temp !== event.target.id)
-    );
-    // console.log(temp.filter((temp) => temp !== event.target.id));
     dispatch(
-      tempFilter(
-        temperamentsSelecteds.filter((temp) => temp !== event.target.id)
+      tempSeleccionados(
+        temperamentosSeleccionados.filter((temp) => temp !== event.target.id)
       )
     );
-    setCleanFilterTemps(true);
+    dispatch(
+      tempFilter(
+        temperamentosSeleccionados.filter((temp) => temp !== event.target.id)
+      )
+    );
   };
   const handlerReset = () => {
     setCurrentPage(0);
     dispatch(reset());
-    setCleanFilterTemps(true);
     dispatch(tempFilter(""));
-    setTemperamentsSelectedsFilter([]);
+    dispatch(tempSeleccionados(""));
+
     setNotFoundDataBase(false);
   };
   //!
   // if (!dogs.length) {
   //   setDatabase(true);
   // }
-  const [modalType, setModalType] = useState("");
-  const [openModal, setOpenModal] = useState(false);
+
   if (!dogsPaginado.length) {
-    // console.log("database if", database);
     if (notFoundDataBase) {
       return (
         <div className={style.notFoundDataBase}>
@@ -150,22 +127,21 @@ const CardContainer = () => {
           <button onClick={handlerReset} className={style.button}>
             Reset
           </button>
-          {/* <div className={style.tempContainer}>
-            <h1>holas</h1>
-            {temperamentsSelecteds &&
-              temperamentsSelecteds.map((temp, index) => {
-                console.log(temp, "temperamentos");
-                return (
-                  <div key={index} className={style.tempSelected}>
-                    <span>{temp}</span>
-                    <button type="button" id={temp} onClick={handlerDelete}>
-                      x
-                    </button>
-                  </div>
-                );
-              })}
-          </div> */}
         </section>
+        <div className={style.tempContainer}>
+          {temperamentosSeleccionados &&
+            temperamentosSeleccionados.map((temp, index) => {
+              console.log(temp, "temperamentos");
+              return (
+                <div key={index} className={style.tempSelected}>
+                  <span>{temp}</span>
+                  <button type="button" id={temp} onClick={handlerDelete}>
+                    x
+                  </button>
+                </div>
+              );
+            })}
+        </div>
 
         <Modal
           openModal={openModal}
