@@ -1,7 +1,7 @@
 .modal {
   position: fixed;
   inset: 0;
-  height: 100vh;
+  height: 100svh;
   width: 100vw;
   background: #ededed;
   display: flex;
@@ -26,9 +26,10 @@
   color: #eeeeee;
   text-align: center;
 }
-/* .modal__button:hover {
-  scale: 1.1;
-} */
+.modal__button:active {
+  scale: 1.05;
+  background: var(--tertiary_color);
+}
 .exit {
   position: relative;
   width: 100%;
@@ -44,4 +45,8 @@
   font-size: 1.2em;
   color: #eee;
   bottom: 0;
+}
+.exit__button:active {
+  scale: 1.05;
+  background: var(--tertiary_color);
 }

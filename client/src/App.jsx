@@ -22,9 +22,7 @@ function App() {
   const location = useLocation().pathname;
   return (
     <section id="App">
-      {/*! Navbar */}
       {location !== "/" && <NavBar />}
-      {/* <h1>Henry Dogs</h1> */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<HomePage />} />
