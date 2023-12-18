@@ -10,8 +10,8 @@ import { getDogs, getTemperaments } from "./redux/actions";
 import { useEffect } from "react";
 import axios from "axios";
 
-// axios.defaults.baseURL = "https://apidoggyklopedia.onrender.com/";
-axios.defaults.baseURL = "http://localhost:3001/";
+axios.defaults.baseURL = "https://apidoggyklopedia.onrender.com/";
+// axios.defaults.baseURL = "http://localhost:3001/";
 
 function App() {
   const dispatch = useDispatch();
