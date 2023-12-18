@@ -167,6 +167,15 @@ const CardContainer = () => {
             );
           })}
         </section>
+        <section className={style.pages}>
+          <button onClick={prevHandler} className={style.pages__button}>
+            ←
+          </button>
+          <p className={style.pages__page}>{currentPage}</p>
+          <button onClick={nextHandler} className={style.pages__button}>
+            →
+          </button>
+        </section>
       </main>
     );
   }

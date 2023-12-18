@@ -26,3 +26,19 @@
 
   justify-content: center;
 }
+.pages {
+  display: flex;
+  margin-top: 8px;
+  padding: 0 8px;
+  font-size: 1em;
+}
+.pages__button {
+  flex: 1;
+  border-radius: 8px;
+  border: none;
+  background: var(--quarter_color);
+}
+.pages__page {
+  flex: 1;
+  text-align: center;
+}
