@@ -35,15 +35,15 @@ const SearchBar = () => {
         onChange={handlerInput}
         className={style.searhBar__input}
       />
-      <button
-        className={style.slide__button}
+      {/* <button
+        className={style.searhBar__button}
         onClick={() => {
           Search(raza);
           setRaza("");
         }}
       >
         Search
-      </button>
+      </button> */}
     </article>
   );
 };

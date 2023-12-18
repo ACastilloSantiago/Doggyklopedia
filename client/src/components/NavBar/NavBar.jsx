@@ -8,17 +8,22 @@ const NavBar = () => {
 
   return (
     <nav className={style.nav}>
-      <Link to={"/"}>
-        <img
-          className={style.nav__icon_landing}
-          src="../../../icon-lightgreen-removebg-preview.png"
-          alt=""
-        />
-      </Link>
-      {!location.includes("/home") && (
-        <Link to="/home" className={style.nav__link}>
-          Inicio
+      <div className={style.nav__icon}>
+        <Link to={"/"}>
+          <img
+            className={style.nav__icon_landing}
+            src="../../../icon-brown-removebg-preview.png"
+            alt="landing-icon"
+          />
         </Link>
+      </div>
+
+      {!location.includes("/home") && (
+        <div className={style.nav__icon}>
+          <Link to="/home" className={style.nav__link}>
+            Inicio
+          </Link>
+        </div>
       )}
 
       {!location.includes("/detail") && !location.includes("/creator") && (
@@ -26,15 +31,11 @@ const NavBar = () => {
       )}
 
       {!location.includes("/creator") && (
-        <Link to="/creator" className={style.nav__link}>
-          {/* <img
-
-            className={style.nav__icon_newdog}
-            src="../../../public/agregar-removebg-preview.png"
-            alt=""
-          /> */}
-          Agregar
-        </Link>
+        <div className={style.nav__icon}>
+          <Link to="/creator" className={style.nav__link}>
+            Agregar
+          </Link>
+        </div>
       )}
     </nav>
   );

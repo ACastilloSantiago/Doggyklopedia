@@ -4,42 +4,19 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  overflow: hidden;
-  padding: 8px;
-}
-
-/* .nav__img {
-  transition: 0.5s;
-  overflow: hidden;
-} */
-.nav__icon_landing {
-  width: 40px;
-}
-.nav__icon_home {
-  width: 24px;
-}
-.nav__icon_newdog {
-  width: 80px;
-}
-.nav__img:hover {
-  /* width: ; */
+  padding: 8px 0;
 }
 .nav__link {
   text-decoration: none;
-  color: var(--tertiary_color);
-  font-size: 1.2em;
+  text-align: center;
+  color: var(--quarter_color);
+  font-size: 1.3em;
   font-weight: 500;
 }
-
-/* .nav__link {
-    color: #000000;
-    text-decoration: none;
-    font-size: 1.5rem;
-    background-color: coral;
-    padding: 2px;
-    border: 1px solid black;
-    transition: font-size 0.3s;
-  }
-  .nav__link:hover {
-    font-size: 2rem;
-  } */
+.nav__icon_landing {
+  width: 40px;
+}
+.nav__icon {
+  text-align: center;
+  flex: 1;
+}

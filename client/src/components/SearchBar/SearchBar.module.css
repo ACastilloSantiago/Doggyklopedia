@@ -3,14 +3,7 @@
   gap: 4px;
   align-items: center;
 }
-.searhBar__input {
-  width: 120px;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 2px 2px 5px #606970;
-}
-
-.slide__button {
+.searhBar__button {
   color: #000;
   border: none;
   background-color: #fff;
@@ -19,9 +12,22 @@
   transition: 0.7s;
   padding: 4px;
   font-size: 1em;
+  display: none;
 }
 
-.slide_diagonal:hover {
+.searhBar_diagonal:hover {
   font-size: 1vw;
   box-shadow: inset 400px 50px 0 0 #c4e1f1;
+}
+.searhBar__input {
+  width: 120px;
+  border: none;
+  font-size: 1em;
+  padding: 2px 8px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px #606970;
+  text-transform: uppercase;
+}
+.searhBar__input:focus-visible {
+  outline: 1px solid var(--tertiary_color);
 }
