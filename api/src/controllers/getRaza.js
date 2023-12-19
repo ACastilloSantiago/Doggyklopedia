@@ -8,7 +8,7 @@ const { Op } = require("sequelize");
 // ME QUEDE CON VER SI LEE BIEN LA RAZA Y SE FIJA EN LA BASE DE DATOS JEJE. TERMINE VIENDO TEMA DE OPERADORES, CAPAS ES MAS FACIL ASI KJEJE
 
 module.exports = async (raza) => {
-  console.log(raza, 2);
+  // console.log(raza, 2);
   let razasDB = await Dogs.findAll({
     where: { name: { [Op.iLike]: `%${raza}%` } },
 
@@ -37,7 +37,7 @@ module.exports = async (raza) => {
     return [
       ...razas,
       ...razasDB.map((dog) => {
-        console.log(dog);
+        // console.log(dog);
         return {
           name: dog.name,
           temperaments: !dog.temperaments.length
@@ -58,7 +58,7 @@ module.exports = async (raza) => {
   }
   if (razasDB.length) {
     return razasDB.map((dog) => {
-      console.log(555, dog);
+      // console.log(555, dog);
 
       return {
         name: dog.name,

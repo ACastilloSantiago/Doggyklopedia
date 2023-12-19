@@ -159,18 +159,17 @@ const CardContainer = () => {
         />
 
         <section className={style.cards}>
-          {dogsPaginado.map((dog) => {
+          {dogsPaginado.map((dog, index) => {
             return (
-              <>
-                <Card
-                  name={dog.name}
-                  life_span={dog.life_span}
-                  weight={dog.weight}
-                  temperament={dog.temperaments}
-                  id={dog.id}
-                  image={dog.image}
-                />
-              </>
+              <Card
+                key={index}
+                name={dog.name}
+                life_span={dog.life_span}
+                weight={dog.weight}
+                temperament={dog.temperaments}
+                id={dog.id}
+                image={dog.image}
+              />
             );
           })}
         </section>

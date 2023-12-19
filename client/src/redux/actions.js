@@ -77,6 +77,11 @@ export const getDogById = (id) => {
 };
 export const getDogsByRaza = (raza) => {
   return async (dispatch) => {
+    if (!raza) {
+      return dispatch({
+        type: RESET,
+      });
+    }
     try {
       const { data } = await axios(`/dogs/name?name=${raza}`);
       return dispatch({
@@ -84,10 +89,8 @@ export const getDogsByRaza = (raza) => {
         payload: data,
       });
     } catch (error) {
-      // console.log(error.request.response);
       return dispatch({
         type: ERROR,
-        payload: "wdasd",
       });
     }
   };

@@ -44,10 +44,10 @@ const reducer = (state = initialState, action) => {
       };
 
     case ERROR:
-      console.log(action.payload);
+      // console.log(action.payload);
       return {
         ...state,
-        error: action.payload,
+        dogs_Show: "",
       };
     case TEMPFILTER:
       if (typeof action.payload === "string") {
@@ -62,19 +62,19 @@ const reducer = (state = initialState, action) => {
         };
       } else {
         // caso de array en payload
-        console.log("entre en borrar");
+        // console.log("entre en borrar");
         let delet = [...state.allDogs];
         for (const temp of action.payload) {
-          console.log("temperamento de broorar", temp, delet);
+          // console.log("temperamento de broorar", temp, delet);
           delet = delet.filter((dog) => {
             if (dog.temperaments) {
               if (dog.temperaments.includes(temp.trim())) return dog;
               return;
             }
           });
-          console.log("temperamento borradp", temp, delet);
+          // console.log("temperamento borradp", temp, delet);
         }
-        console.log("dogShow terminado", delet);
+        // console.log("dogShow terminado", delet);
         return {
           ...state,
           dogs_Show: [...delet],
@@ -208,11 +208,19 @@ const reducer = (state = initialState, action) => {
         dogs_Show: [...action.payload],
       };
     case GET_DOGSBYRAZA:
-      return {
-        ...state,
+      if (action.payload) {
+        return {
+          ...state,
 
-        dogs_Show: [...action.payload],
-      };
+          dogs_Show: [...action.payload],
+        };
+      } else {
+        return {
+          ...state,
+
+          dogs_Show: [...state.allDogs],
+        };
+      }
     case GET_TEMPERAMENTS:
       return { ...state, temps: action.payload };
     case POST_DOG:

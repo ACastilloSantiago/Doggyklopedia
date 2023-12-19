@@ -1,6 +1,6 @@
 import style from "./SearchBar.module.css";
 import { useEffect, useState } from "react";
-import { cleanError, getDogs, getDogsByRaza } from "../../redux/actions";
+import { cleanError, getDogs, getDogsByRaza, reset } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 // import { UseSelector } from "react-redux";
 const SearchBar = () => {
@@ -8,25 +8,23 @@ const SearchBar = () => {
   const erR = useSelector((state) => state.error);
   const [raza, setRaza] = useState("");
   const handlerInput = (event) => {
+    console.log("input", event.target.value);
+    // if (!event.target.value) dispatch(reset());
     setRaza(event.target.value);
   };
-  const Search = (raza) => {
-    dispatch(getDogsByRaza(raza));
-  };
+  // const Search = (raza) => {
+  //   dispatch(getDogsByRaza(raza));
+  // };
   useEffect(() => {
-    if (raza) {
-      dispatch(getDogsByRaza(raza));
-    } else {
-      // dispatch(getDogs());
-    }
+    // console.log("raza", raza);
+    // if (raza) {
+    dispatch(getDogsByRaza(raza));
+    // } else {
+    //   // console.log("borrado");
+    //   dispatch(getDogs());
+    // }
   }, [raza]);
-  // console.log(raza);
-  // console.log("error", erR);
-  if (erR) {
-    // setRaza("");
-    alert("No existe la raza que esta buscando!");
-    dispatch(cleanError());
-  }
+
   return (
     <article className={style.searhBar}>
       <input
