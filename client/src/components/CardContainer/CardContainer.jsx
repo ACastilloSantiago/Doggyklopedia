@@ -9,6 +9,7 @@ import {
   tempFilter,
   tempSeleccionados,
   page,
+  notFound,
 } from "../../redux/actions";
 import { useEffect, useState } from "react";
 import Loading from "../Loading/Loading";
@@ -17,7 +18,8 @@ const CardContainer = () => {
   const dispatch = useDispatch();
   //!ESTADOS
   const dogs = useSelector((state) => state.dogs_Show);
-  const [notFoundDataBase, setNotFoundDataBase] = useState(false);
+  // const [notFoundDataBase, setNotFoundDataBase] = useState(false);
+  const notFoundDataBase = useSelector((state) => state.notFoundDataBase);
   const temperamentosSeleccionados = useSelector(
     (state) => state.temperamentosSeleccionados
   );
@@ -74,9 +76,9 @@ const CardContainer = () => {
     dispatch(reset());
     dispatch(tempFilter(""));
     dispatch(tempSeleccionados(""));
-
-    setNotFoundDataBase(false);
+    dispatch(notFound(false));
   };
+
   //!
   // if (!dogs.length) {
   //   setDatabase(true);
@@ -85,17 +87,17 @@ const CardContainer = () => {
   if (!dogsPaginado.length) {
     if (notFoundDataBase) {
       return (
-        <div className={style.notFoundDataBase}>
-          <h1>No hay perros disponibles!</h1>
+        <article className={style.notfound}>
+          <h1 className={style.notfound__title}>No hay perros disponibles!</h1>
           <img
             src="https://golfwithoutlimits.com/images_home/404_page_not_found_dog.jpg"
-            alt=""
+            alt="notfound-dog"
+            className={style.notfound__img}
           />
-          <button onClick={handlerReset} className={style.slide_diagonal}>
-            Back
+          <button onClick={handlerReset} className={style.notfound__button}>
+            Volver!
           </button>
-          <br />
-        </div>
+        </article>
       );
     } else {
       return (

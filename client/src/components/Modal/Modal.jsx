@@ -7,6 +7,7 @@ import {
   tempFilter,
   tempSeleccionados,
   page,
+  notFound,
 } from "../../redux/actions";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -18,6 +19,8 @@ const Modal = ({ type, openModal, closeModal }) => {
 
   const dispatch = useDispatch();
   const temps = useSelector((state) => state.temps);
+  const notFoundDataBase = useSelector((state) => state.notFoundDataBase);
+
   const [cleanFilterTemps, setCleanFilterTemps] = useState(false);
   const temperamentosSeleccionados = useSelector(
     (state) => state.temperamentosSeleccionados
@@ -39,6 +42,7 @@ const Modal = ({ type, openModal, closeModal }) => {
     setCleanFilterTemps(false);
     if (event.target.value === "DataBase") {
       //?   setNotFoundDataBase(true);
+      dispatch(notFound(true));
     }
   };
   const handlerTempFilter = (event) => {
@@ -54,6 +58,7 @@ const Modal = ({ type, openModal, closeModal }) => {
       //?   setCurrentPage(0);
       setCleanFilterTemps(false);
       //?   setNotFoundDataBase(true);
+      dispatch(notFound(true));
     }
   };
   const handlerDelete = (event) => {

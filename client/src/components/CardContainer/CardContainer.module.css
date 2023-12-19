@@ -50,10 +50,18 @@
   border-radius: 8px;
   border: none;
   background: var(--quarter_color);
+  /* font-size: 1.4em; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
 }
 .pages__page {
   flex: 1;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 1.4em; */
 }
 
 .filters {
@@ -73,4 +81,31 @@
 }
 .filter__button:active {
   color: red;
+}
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.notfound__title {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--quarter_color);
+}
+.notfound__img {
+  width: 100%;
+}
+.notfound__button {
+  color: #eee;
+  font-weight: 500;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  width: 75%;
+  background: var(--secondary_color);
 }

@@ -21,10 +21,17 @@ let initialState = {
   error: "",
   temperamentosSeleccionados: [],
   currentPage: "",
+  notFoundDataBase: false,
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     // Presentaciones
+
+    case "NOTFOUND":
+      return {
+        ...state,
+        notFoundDataBase: action.payload,
+      };
     case "PAGE":
       return {
         ...state,

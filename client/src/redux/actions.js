@@ -49,6 +49,12 @@ export const page = (value) => {
     payload: value,
   };
 };
+export const notFound = (value) => {
+  return {
+    type: "NOTFOUND",
+    payload: value,
+  };
+};
 //
 export const getDogById = (id) => {
   return async (dispatch) => {
