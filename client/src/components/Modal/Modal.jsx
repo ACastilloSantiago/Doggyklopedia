@@ -108,11 +108,11 @@ const Modal = ({ type, openModal, closeModal }) => {
         >
           Peso +/-.
         </button>
-        <div className={style.exit}>
-          <button onClick={closeModal} className={style.exit__button}>
-            Aplicar ordenaminetos
-          </button>
-        </div>
+        {/* <div className={style.exit}> */}
+        <button onClick={closeModal} className={style.exit__button}>
+          Aplicar ordenaminetos
+        </button>
+        {/* </div> */}
       </article>
     );
   }
