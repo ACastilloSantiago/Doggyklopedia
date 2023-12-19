@@ -6,6 +6,7 @@ import {
   reset,
   tempFilter,
   tempSeleccionados,
+  page,
 } from "../../redux/actions";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -25,11 +26,15 @@ const Modal = ({ type, openModal, closeModal }) => {
   //! HANDLERS
   const handlerOrder = (event) => {
     dispatch(order(event.target.value));
+    dispatch(page(0));
+
     //? setCurrentPage(0);
     setCleanFilterTemps(false);
   };
   const handlerFilter = (event) => {
     dispatch(filter(event.target.value));
+    dispatch(page(0));
+
     //? setCurrentPage(0);
     setCleanFilterTemps(false);
     if (event.target.value === "DataBase") {
@@ -44,6 +49,8 @@ const Modal = ({ type, openModal, closeModal }) => {
           ...new Set([...temperamentosSeleccionados, ` ${event.target.value}`]),
         ])
       );
+      dispatch(page(0));
+
       //?   setCurrentPage(0);
       setCleanFilterTemps(false);
       //?   setNotFoundDataBase(true);
@@ -123,16 +130,19 @@ const Modal = ({ type, openModal, closeModal }) => {
           })}
         </select>
         {/* //!! Temperamentos seleccionados en filtros */}
-        <div className={style.tempContainer}>
+        <div className={style.filters}>
           {temperamentosSeleccionados &&
             temperamentosSeleccionados.map((temp, index) => {
               return (
-                <div key={index} className={style.tempSelected}>
-                  <span>{temp}</span>
-                  <button type="button" id={temp} onClick={handlerDelete}>
-                    x
-                  </button>
-                </div>
+                <button
+                  key={index}
+                  type="button"
+                  id={temp}
+                  onClick={handlerDelete}
+                  className={style.filter__button}
+                >
+                  {temp}
+                </button>
               );
             })}
         </div>

@@ -1,5 +1,7 @@
 .detailPage {
+  display: flex;
   padding: 16px;
+  flex: 1;
 }
 .detailPage__vector {
   position: fixed;

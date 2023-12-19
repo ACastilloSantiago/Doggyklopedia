@@ -43,6 +43,12 @@ export const tempSeleccionados = (value) => {
     payload: value,
   };
 };
+export const page = (value) => {
+  return {
+    type: "PAGE",
+    payload: value,
+  };
+};
 //
 export const getDogById = (id) => {
   return async (dispatch) => {

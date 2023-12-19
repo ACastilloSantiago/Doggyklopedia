@@ -8,6 +8,7 @@ import {
   reset,
   tempFilter,
   tempSeleccionados,
+  page,
 } from "../../redux/actions";
 import { useEffect, useState } from "react";
 import Loading from "../Loading/Loading";
@@ -24,7 +25,8 @@ const CardContainer = () => {
   const [openModal, setOpenModal] = useState(false);
 
   // !PAGINADO
-  const [currentPage, setCurrentPage] = useState(0);
+  // const [currentPage, setCurrentPage] = useState(0);
+  const currentPage = useSelector((state) => state.currentPage);
   const DOGS_FOR_PAGE = 8;
   const [dogsPaginado, setDogsPaginado] = useState(
     [...dogs].splice(0, DOGS_FOR_PAGE)
@@ -35,14 +37,15 @@ const CardContainer = () => {
     const firstIndex = nextPage * DOGS_FOR_PAGE;
     if (firstIndex >= dogsIndex) return;
     setDogsPaginado([...dogs].splice(firstIndex, DOGS_FOR_PAGE));
-    setCurrentPage(nextPage);
+    dispatch(page(nextPage));
   };
   const prevHandler = () => {
     const prevPage = currentPage - 1;
     if (prevPage < 0) return;
     const firstIndex = prevPage * DOGS_FOR_PAGE;
     setDogsPaginado([...dogs].splice(firstIndex, DOGS_FOR_PAGE));
-    setCurrentPage(prevPage);
+    // setCurrentPage(prevPage);
+    dispatch(page(prevPage));
   };
 
   useEffect(() => {
@@ -61,9 +64,13 @@ const CardContainer = () => {
         temperamentosSeleccionados.filter((temp) => temp !== event.target.id)
       )
     );
+    // setCurrentPage(0);
+    dispatch(page(0));
   };
   const handlerReset = () => {
-    setCurrentPage(0);
+    // setCurrentPage(0);
+    dispatch(page(0));
+
     dispatch(reset());
     dispatch(tempFilter(""));
     dispatch(tempSeleccionados(""));
@@ -92,12 +99,8 @@ const CardContainer = () => {
       );
     } else {
       return (
-        <div>
-          {/* <button onClick={handlerReset} className={style.slide_diagonal}>
-            ResetT
-          </button> */}
-          <Loading />
-        </div>
+        <Loading />
+        // <>
       );
     }
   } else {
@@ -128,20 +131,22 @@ const CardContainer = () => {
             Reset
           </button>
         </section>
-        <div className={style.tempContainer}>
+        <article className={style.filters}>
           {temperamentosSeleccionados &&
             temperamentosSeleccionados.map((temp, index) => {
-              console.log(temp, "temperamentos");
               return (
-                <div key={index} className={style.tempSelected}>
-                  <span>{temp}</span>
-                  <button type="button" id={temp} onClick={handlerDelete}>
-                    x
-                  </button>
-                </div>
+                <button
+                  key={index}
+                  type="button"
+                  id={temp}
+                  onClick={handlerDelete}
+                  className={style.filter__button}
+                >
+                  {temp} →
+                </button>
               );
             })}
-        </div>
+        </article>
 
         <Modal
           openModal={openModal}

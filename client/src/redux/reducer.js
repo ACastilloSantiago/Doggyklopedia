@@ -20,12 +20,17 @@ let initialState = {
   temps: [],
   error: "",
   temperamentosSeleccionados: [],
+  currentPage: "",
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     // Presentaciones
+    case "PAGE":
+      return {
+        ...state,
+        currentPage: action.payload,
+      };
     case "TEMPSELECTED":
-      console.log(action.payload, "temperamentos seleccionados");
       return {
         ...state,
         temperamentosSeleccionados: [...action.payload],
