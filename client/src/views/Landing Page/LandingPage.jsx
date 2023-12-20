@@ -3,15 +3,21 @@ import { Link } from "react-router-dom";
 const LandingPage = () => {
   return (
     <main className={style.landing}>
-      <img src="../../../vector-landing.svg" alt="" className={style.vector} />
+      <div className={style.vector}>
+        {/* <img
+          src="../../../vector-landing-2.svg"
+          alt=""
+          className={style.vector}
+        /> */}
+      </div>
 
-      <div className={style.text}>
+      <header className={style.text}>
         <h1 className={style.text__title}>DOGGYKLOPEDIA</h1>
         <p className={style.text__paragraph}>
           Aplicación web enfocada en proveer información detallada sobre las
           distintas razas de perros en el mundo!
         </p>
-      </div>
+      </header>
 
       <img
         className={style.landing__img}

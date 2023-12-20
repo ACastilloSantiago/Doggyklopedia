@@ -18,11 +18,15 @@ const DetailPage = () => {
   // console.log("Detail Page", dogById);
   return (
     <div className={style.detailPage}>
-      <img
+      {/* <img
         className={style.detailPage__vector}
         src="../../../vector-detail.svg"
         alt="vector-background"
-      />
+      /> */}
+      <div className={style.vector}></div>
+      <div className={style.vector_r}></div>
+      <div className={style.vector_d}></div>
+
       <Detail detail={dogById} />
     </div>
   );
