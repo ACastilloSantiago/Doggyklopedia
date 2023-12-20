@@ -7,6 +7,9 @@
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
+html {
+  font-size: 16px;
+}
 body {
   width: 100vw;
   min-height: 100vh;
@@ -16,4 +19,26 @@ body {
   --secondary_color: #89b282;
   --tertiary_color: #293f36;
   --quarter_color: #98744e;
+}
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 960px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    /* font-size: 24px; */
+  }
 }

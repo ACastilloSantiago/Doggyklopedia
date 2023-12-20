@@ -15,12 +15,9 @@
   display: none;
 }
 
-.searhBar_diagonal:hover {
-  font-size: 1vw;
-  box-shadow: inset 400px 50px 0 0 #c4e1f1;
-}
 .searhBar__input {
   width: 120px;
+
   border: none;
   font-size: 1em;
   padding: 2px 8px;
@@ -30,4 +27,26 @@
 }
 .searhBar__input:focus-visible {
   outline: 1px solid var(--tertiary_color);
+}
+@media screen and (min-width: 480px) {
+  .searhBar__input {
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .searhBar__input {
+    width: 350px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .searhBar__input {
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .searhBar__input {
+    width: 550px;
+  }
 }
