@@ -1,14 +1,11 @@
 import style from "./Form.module.css";
 import { useState } from "react";
-// const validate = require("../../validation/validate");
 import { useDispatch, useSelector } from "react-redux";
-import { cleanError, postDog } from "../../redux/actions";
-// import { useHistory } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { postDog } from "../../redux/actions";
 
-const Form = () => {
+const Form = ({ temps }) => {
   //!!ESTADOS
-  const temps = useSelector((state) => state.temps);
+  // const temps = useSelector((state) => state.temps);
   const errR = useSelector((state) => state.error);
   const [selectedTemps, setSelectedTemps] = useState([]);
   //? Estado que envio
@@ -29,7 +26,6 @@ const Form = () => {
   });
   const dispatch = useDispatch();
   //!!
-  const history = useNavigate();
   const [error, setError] = useState({
     name: "Este parametro no puede estar vacio!",
     height_min: "Este parametro no puede estar vacio!",
@@ -388,15 +384,15 @@ const Form = () => {
     return send;
   };
   if (errR) {
-    console.log(2, errR);
-    errR === "Creado con exito!"
-      ? setTimeout(() => {
-          // alert(errR);
-          history("/home");
-          dispatch(cleanError());
-        }, 1000)
-      : alert(errR);
-    dispatch(cleanError());
+    // console.log(2, errR);
+    // errR === "Creado con exito!"
+    //   ? setTimeout(() => {
+    //       // alert(errR);
+    //       history("/home");
+    //       dispatch(cleanError());
+    //     }, 1000)
+    //   : alert(errR);
+    // dispatch(cleanError());
   }
   return (
     <article className={style.main}>
