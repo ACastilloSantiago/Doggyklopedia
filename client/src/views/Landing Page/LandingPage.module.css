@@ -68,6 +68,7 @@
   border-radius: 8px;
   font-size: 1.8em;
   width: 80%;
+  max-width: 600px;
   /* margin-top: 24px; */
   background: var(--tertiary_color);
   padding: 8px;
@@ -82,4 +83,25 @@
   z-index: -1;
   border-radius: 0 40% 40% 0;
   background: var(--primary_color);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 480px) {
+  .landing__img {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .landing__img {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 960px) {
+}
+
+@media screen and (min-width: 1200px) {
+  .vector {
+    border-radius: 40% 40% 40% 40%;
+  }
 }

@@ -78,97 +78,103 @@ const Modal = ({ type, openModal, closeModal }) => {
   if (type === "order") {
     return (
       <article className={style.modal}>
-        <h2 className={style.modal__title}>Ordenamientos</h2>
+        <div className={style.modal_width}>
+          <h2 className={style.modal__title}>Ordenamientos</h2>
 
-        <button
-          onClick={handlerOrder}
-          value="RazaA"
-          className={style.modal__button}
-        >
-          Raza A/Z.
-        </button>
-        <button
-          onClick={handlerOrder}
-          value="RazaB"
-          className={style.modal__button}
-        >
-          Raza Z/A.
-        </button>
-        <button
-          onClick={handlerOrder}
-          value="PesoA"
-          className={style.modal__button}
-        >
-          Peso -/+.
-        </button>
-        <button
-          onClick={handlerOrder}
-          value="PesoB"
-          className={style.modal__button}
-        >
-          Peso +/-.
-        </button>
-        {/* <div className={style.exit}> */}
-        <button onClick={closeModal} className={style.exit__button}>
-          Aplicar ordenaminetos
-        </button>
-        {/* </div> */}
+          <button
+            onClick={handlerOrder}
+            value="RazaA"
+            className={style.modal__button}
+          >
+            Raza A/Z.
+          </button>
+          <button
+            onClick={handlerOrder}
+            value="RazaB"
+            className={style.modal__button}
+          >
+            Raza Z/A.
+          </button>
+          <button
+            onClick={handlerOrder}
+            value="PesoA"
+            className={style.modal__button}
+          >
+            Peso -/+.
+          </button>
+          <button
+            onClick={handlerOrder}
+            value="PesoB"
+            className={style.modal__button}
+          >
+            Peso +/-.
+          </button>
+          {/* <div className={style.exit}> */}
+          <button onClick={closeModal} className={style.exit__button}>
+            Aplicar ordenaminetos
+          </button>
+          {/* </div> */}
+        </div>
       </article>
     );
   }
   if (type === "filter") {
     return (
       <article className={style.modal}>
-        <h2 className={style.modal__title}>Filtrados</h2>
-        <select
-          className={style.modal__button}
-          name="Filtrado De Temperamentos"
-          onChange={handlerTempFilter}
-        >
-          <option selected={cleanFilterTemps}>Filtrado de Temperamentos</option>
-          {temps.map((temp, index) => {
-            return (
-              <option value={temp.name} key={index}>
-                {temp.name}
-              </option>
-            );
-          })}
-        </select>
-        {/* //!! Temperamentos seleccionados en filtros */}
-        <div className={style.filters}>
-          {temperamentosSeleccionados &&
-            temperamentosSeleccionados.map((temp, index) => {
+        <div className={style.modal_width}>
+          <h2 className={style.modal__title}>Filtrados</h2>
+          <select
+            className={style.modal__button}
+            name="Filtrado De Temperamentos"
+            onChange={handlerTempFilter}
+          >
+            <option selected={cleanFilterTemps}>
+              Filtrado de Temperamentos
+            </option>
+            {temps.map((temp, index) => {
               return (
-                <button
-                  key={index}
-                  type="button"
-                  id={temp}
-                  onClick={handlerDelete}
-                  className={style.filter__button}
-                >
-                  {temp}
-                </button>
+                <option value={temp.name} key={index}>
+                  {temp.name}
+                </option>
               );
             })}
-        </div>
-        <button
-          onClick={handlerFilter}
-          value="DataBase"
-          className={style.modal__button}
-        >
-          Base de datos
-        </button>
-        <button
-          onClick={handlerFilter}
-          value="Api"
-          className={style.modal__button}
-        >
-          Api
-        </button>
-        <div className={style.exit}>
-          <button onClick={closeModal} className={style.exit__button}>
-            Aplicar filtros
+          </select>
+          {/* //!! Temperamentos seleccionados en filtros */}
+          <div className={style.filters}>
+            {temperamentosSeleccionados &&
+              temperamentosSeleccionados.map((temp, index) => {
+                return (
+                  <button
+                    key={index}
+                    type="button"
+                    id={temp}
+                    onClick={handlerDelete}
+                    className={style.filter__button}
+                  >
+                    {temp}
+                  </button>
+                );
+              })}
+          </div>
+          <button
+            onClick={handlerFilter}
+            value="DataBase"
+            className={style.modal__button}
+          >
+            Base de datos
           </button>
+          <button
+            onClick={handlerFilter}
+            value="Api"
+            className={style.modal__button}
+          >
+            Api
+          </button>
+          <div className={style.exit}>
+            <button onClick={closeModal} className={style.exit__button}>
+              Aplicar filtros
+            </button>
+          </div>
         </div>
       </article>
     );

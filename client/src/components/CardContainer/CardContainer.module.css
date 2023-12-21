@@ -58,6 +58,9 @@
   justify-content: center;
   padding: 4px;
 }
+.pages__button:hover {
+  cursor: pointer;
+}
 .pages__page {
   flex: 1;
   display: flex;

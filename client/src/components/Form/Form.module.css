@@ -6,6 +6,7 @@
   width: 100%;
   height: 100%;
   text-align: center;
+  max-width: 600px;
 }
 .main__title {
   text-align: center;
@@ -38,6 +39,9 @@
   border: none;
   border-radius: 8px;
   box-shadow: 2px 2px 5px #606970;
+}
+.form__input:focus-visible {
+  outline: 2px solid var(--secondary_color);
 }
 .form__span {
   font-size: 0.7em;

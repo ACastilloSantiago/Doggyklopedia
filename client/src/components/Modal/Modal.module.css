@@ -28,8 +28,10 @@
   text-align: center;
 }
 .modal__button:active {
-  scale: 1.05;
   background: var(--tertiary_color);
+}
+.modal__button:hover {
+  cursor: pointer;
 }
 .filters {
   display: flex;
@@ -47,6 +49,10 @@
   background: none;
 }
 .filter__button:active {
+  color: red;
+}
+.filter__button:hover {
+  cursor: pointer;
   color: red;
 }
 
@@ -70,8 +76,27 @@
   right: 0;
   left: 0;
   margin: 0 16px;
+  max-width: 600px;
+  /* margin: 0 auto; */
 }
 .exit__button:active {
   scale: 1.05;
   background: var(--tertiary_color);
+}
+.exit__button:hover {
+  cursor: pointer;
+}
+.modal_width {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  overflow-y: hidden;
+}
+@media screen and (min-width: 600px) {
+  .exit__button {
+    margin: 0 auto;
+  }
 }
