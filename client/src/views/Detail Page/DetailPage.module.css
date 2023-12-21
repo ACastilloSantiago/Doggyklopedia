@@ -3,12 +3,15 @@
   padding: 16px;
   flex: 1;
   /* background: #000; */
+  justify-content: center;
+  overflow: hidden;
 }
 .detailPage__vector {
   position: fixed;
   z-index: -1;
   inset: 0;
   width: 100%;
+  overflow: hidden;
 }
 .vector {
   position: fixed;
@@ -20,6 +23,7 @@
   z-index: -1;
   border-radius: 50% 0 0 0;
   background: var(--primary_color);
+  overflow: hidden;
 }
 .vector_r {
   position: fixed;
@@ -30,6 +34,7 @@
   z-index: -1;
   border-radius: 0 0 30% 0;
   background: #fff;
+  overflow: hidden;
 }
 .vector_d {
   position: fixed;
@@ -40,4 +45,5 @@
   z-index: -3;
   /* border-radius: 0 0 50% 0; */
   background: var(--primary_color);
+  overflow: hidden;
 }
