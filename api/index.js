@@ -22,7 +22,7 @@ const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
 const getTemperaments = require("./src/controllers/getTemperaments.js");
 const { PORT } = process.env;
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   server.listen(PORT, () => {
     getTemperaments();
     console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
