@@ -5,14 +5,16 @@ const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
+console.log("name", DB_NAME);
 const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`
+  // `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`
 
-  // "postgres://postgress:4WU3oDT8ZvwDdP4fbJ8pH0i1B4jKo6UU@dpg-cnbq25779t8c73a6a2mg-a/dogs_azac"
-  // {
-  //   logging: false, // set to console.log to see the raw SQL queries
-  //   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-  // }
+  "postgresql://postgres:f6f32cb*g6eEBe-E6*Da61DbgC5ED2*1@roundhouse.proxy.rlwy.net:46347/railway",
+  // " postgres://postgress:ZQl9oN7iyxK6Mg6uupclqDmQAIeuzIEA@dpg-cntnjekf7o1s73e91dc0-a/dogs_go1o",
+  {
+    logging: false, // set to console.log to see the raw SQL queries
+    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  }
 );
 const basename = path.basename(__filename);
 
